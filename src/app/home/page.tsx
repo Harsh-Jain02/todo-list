@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from "next/navigation";
+
 import React,{ ChangeEvent, FormEvent, useState } from "react";
 
 interface dataProp{
@@ -12,7 +12,6 @@ export default function Home() {
     username: "",
     password : ""
   });
-  const router = useRouter();
 
   const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
     setdata({
@@ -22,15 +21,14 @@ export default function Home() {
   }
   const handleSubmit = (e : FormEvent) => {
     e.preventDefault();
-    console.log(e, e.preventDefault());
     console.log(data);
-    router.push("/home")
+
   }
   return (
     <div className="flex flex-row w-full h-screen border-2 border-white items-center justify-center rounded-xl overflow-hidden">
       <div className="flex text-xl w-1/2 h-full bg-gray-900 items-center justify-center">Hello</div>
       <div className="flex text-xl w-1/2 h-full items-center justify-center">
-        <form 
+        {/* <form 
           className="flex flex-col items-center justify-center space-y-4"
           onSubmit={handleSubmit}  
         >
@@ -56,7 +54,7 @@ export default function Home() {
           >
             Login
           </button>
-      </form>
+      </form> */}
       </div>
     </div>
 
